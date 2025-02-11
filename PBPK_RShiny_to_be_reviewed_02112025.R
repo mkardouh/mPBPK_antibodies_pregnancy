@@ -1732,10 +1732,21 @@ server <- function(input, output, session) {
     #   NULL
     # })
     
-    end_value <- abs((input$GAinitial*7)) + (input$Delivery*7) 
     
     # Ensure pbpk is valid before proceeding
     # if (is.null(pbpk)) return()
+    
+    
+    # This value will give calculate the end of simulation time
+    end_value <- abs((input$GAinitial*7)) + (input$Delivery*7) 
+    
+    # Molecular weights for each of the antibodies
+    mw_value <- case_when(input$model_select == "Infliximab"  ~ 149000, 
+                          input$model_select == "Adalimumab"  ~ 148000,
+                          input$model_select == "Etanercept"  ~ 150000,
+                          input$model_select == "Ustekinumab" ~ 148600,
+                          input$model_select == "Vedolizumab" ~ 146800
+    )
     
     if (input$regimen_type == "Custom") {
       events <- list()
@@ -1766,19 +1777,8 @@ server <- function(input, output, session) {
       # Determine compartment based on administration route
       cmt_value <- if (input$admin_route == "IV") 2 else 1
       
-      # Molecular weights for each of the antibodies
-      mw_value <- case_when(input$model_select == "Infliximab"  ~ 149000, 
-                            input$model_select == "Adalimumab"  ~ 148000,
-                            input$model_select == "Etanercept"  ~ 150000,
-                            input$model_select == "Ustekinumab" ~ 148600,
-                            input$model_select == "Vedolizumab" ~ 146800
-      )
-      
       # Disease status for ustekinumab model
       disease_value <- if (input$disease == "Ulcerative colitis") 0 else 1
-      
-      # This value will give calculate the end of simulation time
-      end_value <- abs((input$GAinitial*7)) + (input$Delivery*7) 
       
       # Dataset construction based on the dosing inputs
       data_input <- data.frame(
