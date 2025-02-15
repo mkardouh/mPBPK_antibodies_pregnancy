@@ -7,8 +7,8 @@ Variables used in the models are defined below. TV indicates typical value
 
 ## Parameters:
 ### Physiological Parameters:
-GAinitial         : GA is gestational age (weeks). GAinitial is time the simnulation to be started at in respect to pregnancy, defaulted at 0 (beginnig of the pregnancy)\n
-TVVlymph          : Volume of lymph (L) 
+GAinitial         : GA is gestational age (weeks). GAinitial is time the simnulation to be started at in respect to pregnancy, defaulted at 0 (beginnig of the pregnancy)  
+TVVlymph          : Volume of lymph (L)  
 TVL               : Total lymph flow (L/day) 
 TVKp              : Fraction of interstitial space available for antibody distribution
 TVRfT             : Vascular reflection coefficient for tight tissues
