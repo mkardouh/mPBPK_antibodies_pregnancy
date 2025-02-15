@@ -1606,7 +1606,7 @@ ui <- fluidPage(
     #bottomRightText {
       position: fixed;
       bottom: 60px;
-      left: 500px;
+      left: 350px;
       font-size: 12px;
       color: black;
       background-color: white;
