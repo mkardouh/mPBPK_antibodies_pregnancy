@@ -14,8 +14,11 @@ TVKp              : Fraction of interstitial space available for antibody distri
 TVRfT             : Vascular reflection coefficient for tight tissues  
 TVRfL             : Vascular reflection coefficient for leaky tissues  
 TVRflymph         : Lymphatic vascular reflection coefficient  
-TVCLm             : Additional maternal clearance term for infliximab (L/day)  
-TVkef             : Fetal clearance term for infliximab (day-1)  
+TVCLm             : Additional maternal clearance term for the antibody if applicable (L/day)
+TVkef             : Fetal clearance term for the antibody (day-1)  
+TVKm              : Additional maternal non-linear clearance of the antibody, if applicable. Km is concentration at half-maximum elimination rate (nM)  
+TVVmax            : Additional maternal non-linear clearance of the antibody, if applicable. Vmax is maximum elimination rate (nmoles/day)  
+
 
 ### Physiological Parameters Endosome 1 (Vascular) Parameters:
 TVCLup            : Endothelial nonspecific pinocytosis rate (L∙day−1)  
@@ -26,8 +29,8 @@ TVkon             : Antibody FcRn association rate constant (nM-1.day-1) in endo
 TVkoff            : Antibody-FcRn complex (FcRnA) dissociation rate constant (day−1) in endosomes  
 
 ### Antibodies PK Parameters
-ka                : absorption rate constant (day-1)  
-BA                : SC Bioavailability  
+ka                : absorption rate constant for the antibody, if applicable (day-1)  
+BA                : SC Bioavailability for the antibody, if applicable  
 
 ## Compartments: All are in amounts, except for FcRn and FcRnA are concentrations:
 ### Plasma Compartment
@@ -73,7 +76,7 @@ GA                : Gestational age (weeks).
 M2                : Total FcRn concentration in endosome 2 (nM). FcRn expression equation as a variable to be included in the differential equations  
 M3                : Total FcRn concentration in endosome 3 (nM). FcRn expression equation as a variable to be included in the differential equations  
 
-ETA               : interindividual variability term for, numbered for the respective parameter.  
+ETA               : Interindividual variability term, numbered for the respective parameter.  
 VisfT             : Volume of interstitial fluid/Intracellular Water in the tight tissue (L)  
 VisfL             : Volume of interstitial fluid/Intracellular Water in the tight tissue (L)  
 LT                : Lymph flow in the tight tissues (L/day)  
@@ -100,7 +103,13 @@ FcRn_e3_total     : Total FcRn concentration in endosome 3 (nM)
 tad               : Time since the last dose (days)  
 time              : Simulation time (days)  
 
-## Additional derived variables in the shiny code:
+## Additional derived variables in the shiny code and the exported dataset:
+end_value         : Total simulation time (days)  
+mw_value          : Molecular weight of the antibodu (daltons)  
+ii                : Dosing interval (days)  
+addl              : Additional doses  
+cmt               : Compartment  
+delta             : Simulation intervals (days, ex. every 1 day or 0.1 day)  
 Delivery          : Delivery week (weeks)  
 disease           : Disease code used for ustekinumab PK parameters. 0 = Ulcerative colitis, 1=Crohn's Disease.  
 pregnancy         : Pregnancy total time (days)  
