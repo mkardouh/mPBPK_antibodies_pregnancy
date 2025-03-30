@@ -7,7 +7,7 @@ Variables used in the models are defined below. TV indicates typical value
 
 ## Parameters:
 ### Physiological Parameters:
-GAinitial         : GA is gestational age (weeks). GAinitial is time the simnulation to be started at in respect to pregnancy, defaulted at 0 (beginnig of the pregnancy)  
+GAinitial         : Gestational age (weeks) indicating simulation start time, defaults to 0 (beginning of pregnancy)  
 TVVlymph          : Volume of lymph (L)  
 TVL               : Total lymph flow (L/day)  
 TVKp              : Fraction of interstitial space available for antibody distribution  
@@ -15,26 +15,26 @@ TVRfT             : Vascular reflection coefficient for tight tissues
 TVRfL             : Vascular reflection coefficient for leaky tissues  
 TVRflymph         : Lymphatic vascular reflection coefficient  
 TVCLm             : Additional maternal clearance term for the antibody if applicable (L/day)
-TVkef             : Fetal clearance term for the antibody (day-1)  
-TVKm              : Additional maternal non-linear clearance of the antibody, if applicable. Km is concentration at half-maximum elimination rate (nM)  
+TVkef             : Fetal clearance term for the antibody (1/day)  
+TVKm              : Additional maternal non-linear clearance of the antibody, if applicable. Km is concentration at half-maximum elimination rate (nM)
 TVVmax            : Additional maternal non-linear clearance of the antibody, if applicable. Vmax is maximum elimination rate (nmoles/day)  
 
 
 ### Physiological Parameters Endosome 1 (Vascular) Parameters:
-TVCLup            : Endothelial nonspecific pinocytosis rate (L∙day−1)  
-TVCLe             : Lysosome catabolism clearance (L∙day−1)  
-TVkrec            : Endosome recycling rate constant (day−1)  
+TVCLup            : Endothelial nonspecific pinocytosis rate (L/day)  
+TVCLe             : Lysosome catabolism clearance (L/day)  
+TVkrec            : Endosome recycling rate constant (1/day)  
 TVVe1             : Endosome volume for nonspecific pinocytosis (L)  
 TVkon             : Antibody FcRn association rate constant (nM-1.day-1) in endosomes  
-TVkoff            : Antibody-FcRn complex (FcRnA) dissociation rate constant (day−1) in endosomes  
+TVkoff            : Antibody-FcRn complex (FcRnA) dissociation rate constant (1/day) in endosomes  
 
 ### Antibodies PK Parameters
-ka                : absorption rate constant for the antibody, if applicable (day-1)  
-BA                : SC Bioavailability for the antibody, if applicable  
+ka                : Absorption rate constant for the antibody, if applicable (day-1)  
+BA                : Subcutaneous (SC) bioavailability for the antibody, if applicable  
 
 ## Compartments: All are in amounts, except for FcRn and FcRnA are concentrations:
 ### Plasma Compartment
-depot             : depot compartment for SC administration  
+depot             : Depot compartment for SC administration  
 A_plasma          : Antibody in plasma  
 m_auc             : Maternal AUC  
   
@@ -77,8 +77,8 @@ M2                : Total FcRn concentration in endosome 2 (nM). FcRn expression
 M3                : Total FcRn concentration in endosome 3 (nM). FcRn expression equation as a variable to be included in the differential equations  
 
 ETA               : Interindividual variability term, numbered for the respective parameter.  
-VisfT             : Volume of interstitial fluid/Intracellular Water in the tight tissue (L)  
-VisfL             : Volume of interstitial fluid/Intracellular Water in the tight tissue (L)  
+VisfT             : Volume of interstitial fluid/intracellular water in the tight tissue (L)  
+VisfL             : Volume of interstitial fluid/intracellular water in the leaky tissue (L)  
 LT                : Lymph flow in the tight tissues (L/day)  
 LL                : Lymph flow in the leaky tissues (L/day)  
 
@@ -88,8 +88,8 @@ Vplacenta         : Volume of placenta (L)
 Qplacenta         : Blood flow to the placenta (L/day)  
 Vplacenta_blood   : Volume of placenta blood (L)  
 Vplasma_fetal     : Volume of the fetus blood (L)  
-CLupp             : Endothelial nonspecific pinocytosis rate (L∙day−1) in placenta  
-CLep              : Lysosome catabolism clearance (L∙day−1) in placental endosome  
+CLupp             : Endothelial nonspecific pinocytosis rate (L/day) in placenta  
+CLep              : Lysosome catabolism clearance (L/day) in placental endosome  
 Ve2               : Endosome volume for nonspecific pinocytosis (L) for placental endosome  
 Ve3               : Endosome volume for nonspecific pinocytosis (L) for fetal endosome  
 
